@@ -17,11 +17,11 @@
 -->
 <mbeans-descriptors>
 
-  <mbean name="AccessLogValve"
-         description="Valve that generates a web server access log"
+  <mbean name="StdoutAccessLogValve"
+         description="Valve that outputs the web server access log to stdout"
          domain="Catalina"
          group="Valve"
-         type="org.apache.catalina.valves.AccessLogValve">
+         type="org.jboss.openshift.valves.StdoutAccessLogValve">
 
     <attribute name="asyncSupported"
                description="Does this valve support async reporting."
@@ -30,11 +30,6 @@
 
     <attribute name="buffered"
                description="Flag to buffering."
-               is="true"
-               type="boolean"/>
-
-    <attribute name="checkExists"
-               description="Check for file existence before logging."
                is="true"
                type="boolean"/>
 
