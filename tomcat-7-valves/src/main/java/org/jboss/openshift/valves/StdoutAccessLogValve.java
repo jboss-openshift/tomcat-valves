@@ -16,10 +16,6 @@
 
 package org.jboss.openshift.valves;
 
-<<<<<<< HEAD
-=======
-import java.io.File;
->>>>>>> 072f30d9f06453300f18cacabc85145381a340fd
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetAddress;
@@ -44,10 +40,6 @@ import org.apache.catalina.LifecycleState;
 import org.apache.catalina.Session;
 import org.apache.catalina.connector.Request;
 import org.apache.catalina.connector.Response;
-<<<<<<< HEAD
-=======
-import org.apache.catalina.valves.AccessLogValve;
->>>>>>> 072f30d9f06453300f18cacabc85145381a340fd
 import org.apache.catalina.valves.Constants;
 import org.apache.catalina.valves.ValveBase;
 import org.apache.coyote.RequestInfo;
@@ -60,25 +52,14 @@ import org.apache.tomcat.util.ExceptionUtils;
  */
 public class StdoutAccessLogValve extends ValveBase implements AccessLog {
 
-<<<<<<< HEAD
     private static final Log log = LogFactory.getLog(StdoutAccessLogValve.class);
-=======
-    private static final Log log = LogFactory.getLog(AccessLogValve.class);
->>>>>>> 072f30d9f06453300f18cacabc85145381a340fd
 
     public StdoutAccessLogValve() {
         super(true);
     }
 
-<<<<<<< HEAD
     protected static final String info =
         "org.apache.catalina.valves.StdoutAccessLogValve/2.2";
-=======
-    private volatile String dateStamp = "";
-
-    protected static final String info =
-        "org.apache.catalina.valves.AccessLogValve/2.2";
->>>>>>> 072f30d9f06453300f18cacabc85145381a340fd
 
     protected boolean enabled = true;
 
@@ -94,11 +75,6 @@ public class StdoutAccessLogValve extends ValveBase implements AccessLog {
 
     private static final int localCacheSize = 60;
 
-<<<<<<< HEAD
-=======
-    protected File currentLogFile = null;
-
->>>>>>> 072f30d9f06453300f18cacabc85145381a340fd
     protected static class DateFormatCache {
 
         protected class Cache {
