@@ -67,8 +67,6 @@ public class StdoutAccessLogValve extends ValveBase implements AccessLog {
 
     private boolean buffered = true;
 
-    protected PrintWriter writer = null;
-
     protected SimpleDateFormat fileDateFormatter = null;
 
     private static final int globalCacheSize = 300;
@@ -258,8 +256,6 @@ public class StdoutAccessLogValve extends ValveBase implements AccessLog {
 
     private boolean resolveHosts = false;
 
-    private boolean checkExists = false;
-
     protected String condition = null;
 
     protected String conditionIf = null;
@@ -313,19 +309,11 @@ public class StdoutAccessLogValve extends ValveBase implements AccessLog {
     }
 
     public boolean isCheckExists() {
-        return checkExists;
-    }
-
-    public void setCheckExists(boolean checkExists) {
-        this.checkExists = checkExists;
+        return false;
     }
 
     public boolean isBuffered() {
-        return buffered;
-    }
-
-    public void setBuffered(boolean buffered) {
-        this.buffered = buffered;
+        return false;
     }
 
     @Deprecated
@@ -385,10 +373,7 @@ public class StdoutAccessLogValve extends ValveBase implements AccessLog {
 
     @Override
     public synchronized void backgroundProcess() {
-        if (getState().isAvailable() && getEnabled() && writer != null &&
-                buffered) {
-            writer.flush();
-        }
+    	// Do nothing since it is sending to stdout
     }
 
     @Override
