@@ -18,31 +18,17 @@ package org.jboss.openshift.valves;
 
 import java.io.CharArrayWriter;
 
-import org.apache.catalina.valves.AccessLogValve;
+import org.apache.catalina.valves.AbstractAccessLogValve;
 
 /**
  * @author <a href="mailto:rmartine@redhat.com">Ricardo Martinelli</a>
  */
-public class StdoutAccessLogValve extends AccessLogValve {
-	
-	@Override
-	public boolean isRotatable() {
-		return false;
-	}
+public class StdoutAccessLogValve extends AbstractAccessLogValve {
 
 	@Override
-	public void rotate() {
-		// Do nothing
-	}
-
-	@Override
-	public synchronized boolean rotate(String newFileName) {
-		return true;
-	}
-	
-	@Override
-	public void log(CharArrayWriter message) {
+	protected void log(CharArrayWriter message) {
 		System.out.println(message);
 	}
+	
 
 }
