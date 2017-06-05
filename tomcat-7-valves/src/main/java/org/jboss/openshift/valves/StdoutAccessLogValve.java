@@ -17,15 +17,17 @@
 package org.jboss.openshift.valves;
 
 import org.apache.catalina.valves.AccessLogValve;
+import java.util.logging.Logger;
 
 /**
  * @author <a href="mailto:rmartine@redhat.com">Ricardo Martinelli</a>
  */
 public class StdoutAccessLogValve extends AccessLogValve {
 
+    Logger log = Logger.getLogger(this.getClass().getName());
 
     public void log(String message) {
-        System.out.println(message);
+        log.info(message);
     }
 
 }

@@ -20,10 +20,14 @@ import java.io.CharArrayWriter;
 
 import org.apache.catalina.valves.AbstractAccessLogValve;
 
+import java.util.logging.Logger;
+
 /**
  * @author <a href="mailto:rmartine@redhat.com">Ricardo Martinelli</a>
  */
 public class StdoutAccessLogValve extends AbstractAccessLogValve {
+
+	Logger log = Logger.getLogger(this.getClass().getName());
 
 	@Override
 	protected void log(CharArrayWriter message) {
