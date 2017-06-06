@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.jboss.openshift</groupId>
     <artifactId>tomcat-valves</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3.Final</version>
     <packaging>pom</packaging>
     <modules>
         <module>tomcat-8-valves</module>
